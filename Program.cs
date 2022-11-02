@@ -17,6 +17,17 @@ Console.WriteLine("Hello, World!");
 //Il prodotto esponga un metodo per avere il nome esteso, ottenuto concatenando codice + nome
 
 //Nella vostro programma principale, testate tutte le funzionalità della classe Prodotto.
+Prodotto Numero1 = new Prodotto();
+Numero1.SetNome("libro");
+Numero1.SetDescrizione("libro di informatica");
+Numero1.SetPrezzo(17);
+Numero1.SetIva(10);
+
+Console.WriteLine(Numero1.GetCod());
+Console.WriteLine(Numero1.GetNome());
+
+
+
 
 
 public class Prodotto
@@ -24,17 +35,13 @@ public class Prodotto
     private int cod;
     private string nome;
     private string descrizione;
-    private float prezzo;
+    private double prezzo;
     private int iva;
 
 
-    public Prodotto(string nome, string descrizione, float prezzo, int iva )
+    public Prodotto()
     {
         cod = new Random().Next(1000, 9999);
-        this.nome = nome;
-        this.descrizione = descrizione;
-        this.prezzo = prezzo;
-        this.iva = iva;
 
     }
 
@@ -53,7 +60,7 @@ public class Prodotto
         return descrizione;
     }
 
-    public float GetPrezzo()
+    public double GetPrezzo()
     {
         return prezzo;
     }
@@ -73,7 +80,7 @@ public class Prodotto
         this.descrizione = descrizione;
     }
 
-    public void SetPrezzo(float prezzo)
+    public void SetPrezzo(double prezzo)
     {
         this.prezzo = prezzo;
     }
@@ -83,7 +90,7 @@ public class Prodotto
         this.iva = iva;
     }
 
-    public float PrezzoTot()
+    public double PrezzoTot()
     {
         return prezzo + iva;
     }
