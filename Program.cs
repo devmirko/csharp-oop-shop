@@ -25,6 +25,13 @@ Numero1.SetIva(10);
 
 Console.WriteLine(Numero1.GetCod());
 Console.WriteLine(Numero1.GetNome());
+Console.WriteLine(Numero1.GetDescrizione());
+Console.WriteLine(Numero1.GetPrezzo());
+Console.WriteLine(Numero1.GetIva());
+Console.WriteLine(Numero1.PrezzoTot());
+Console.WriteLine(Numero1.Nome());
+
+
 
 
 
@@ -92,12 +99,12 @@ public class Prodotto
 
     public double PrezzoTot()
     {
-        return prezzo + iva;
+        return prezzo + (prezzo / 100 * iva);
     }
 
-    public void Nome()
+    public string Nome()
     {
-        Console.WriteLine("cod:" + cod + "nome" + nome);
+        return  cod + "nome:" + nome;
     }
 
 
