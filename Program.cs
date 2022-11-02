@@ -30,6 +30,7 @@ Console.WriteLine(Numero1.GetPrezzo());
 Console.WriteLine(Numero1.GetIva());
 Console.WriteLine(Numero1.PrezzoTot());
 Console.WriteLine(Numero1.Nome());
+Console.WriteLine(Numero1.Codice(Numero1.GetCod()));
 
 
 
@@ -105,6 +106,20 @@ public class Prodotto
     public string Nome()
     {
         return  cod + "nome:" + nome;
+    }
+
+    public string Codice(int cod)
+    {
+        string codice = Convert.ToString(cod);
+
+        for (int i = 0; i <8; i++)
+        {
+          codice = "0" + codice;
+        }
+
+        return codice;
+
+        
     }
 
 
