@@ -18,19 +18,16 @@ Console.WriteLine("Hello, World!");
 
 //Nella vostro programma principale, testate tutte le funzionalità della classe Prodotto.
 Prodotto Numero1 = new Prodotto();
-Numero1.SetNome("libro");
-Numero1.SetDescrizione("libro di informatica");
-Numero1.SetPrezzo(17);
-Numero1.SetIva(10);
 
-Console.WriteLine(Numero1.GetCod());
-Console.WriteLine(Numero1.GetNome());
-Console.WriteLine(Numero1.GetDescrizione());
-Console.WriteLine(Numero1.GetPrezzo());
-Console.WriteLine(Numero1.GetIva());
+
+Console.WriteLine(Numero1.Cod);
+Console.WriteLine(Numero1.Nome);
+Console.WriteLine(Numero1.Descrizione);
+Console.WriteLine(Numero1.Prezzo);
+Console.WriteLine(Numero1.Iva);
 Console.WriteLine(Numero1.PrezzoTot());
-Console.WriteLine(Numero1.Nome());
-Console.WriteLine(Numero1.Codice(Numero1.GetCod()));
+Console.WriteLine(Numero1.NomeEsteso());
+Console.WriteLine(Numero1.Codice(Numero1.Cod));
 
 
 
@@ -53,57 +50,43 @@ public class Prodotto
 
     }
 
-    public int GetCod()
+    public int Cod
     {
-        return cod;
+        get { return cod; }
     }
 
-    public string GetNome()
+    public string Nome
     {
-        return nome;
+        get { return nome; }
+        set { this.nome = value; }
+        
     }
 
-    public string GetDescrizione()
+    public string Descrizione
     {
-        return descrizione;
+        get { return descrizione; }
+        set { this.descrizione = value; }
     }
 
-    public double GetPrezzo()
+    public double Prezzo
     {
-        return prezzo;
+        get { return prezzo; }
+        set { this.prezzo = value; }
     }
 
-    public int GetIva()
+    public int Iva
     {
-        return iva;
+        get { return iva; }
+        set { this.iva = value; }
     }
 
-    public void SetNome(string nome)
-    {
-        this.nome = nome;
-    }
-
-    public void SetDescrizione(string descrizione)
-    {
-        this.descrizione = descrizione;
-    }
-
-    public void SetPrezzo(double prezzo)
-    {
-        this.prezzo = prezzo;
-    }
-
-    public void SetIva(int iva)
-    {
-        this.iva = iva;
-    }
 
     public double PrezzoTot()
     {
         return prezzo + (prezzo / 100 * iva);
     }
 
-    public string Nome()
+    public string NomeEsteso()
     {
         return  cod + "nome:" + nome;
     }
